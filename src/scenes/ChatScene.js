@@ -33,8 +33,8 @@ class ChatScene extends Scene {
     const pi = this.personimgae[this.person[this.current]];
     const pn = this.personname[this.person[this.current]];
     return `
-      <div class="scene" style="background-image: url(${this.background})">
-        <div class="person" style="background-imgae: url(${pi})"></div>
+      <div class="scene chatscene" style="background-image: url(${this.background})">
+        <img class="person" src="${pi}">
         <div class="chat">
           <p class="chatname">${pn}</p>
           <p class="chatword">${word}</p>

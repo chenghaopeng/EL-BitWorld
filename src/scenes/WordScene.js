@@ -8,7 +8,7 @@ class WordScene extends Scene {
   }
   render() {
     return `
-      <div class="scene" style="background-color: ${this.background}">
+      <div class="scene wordscene" style="background-color: ${this.background}">
         <p class="word">${this.words}</p>
       </div>
     `;
