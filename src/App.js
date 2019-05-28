@@ -16,16 +16,19 @@ class App {
   constructor(screenContainer, controllerContainer) {
     this.screen = new Screen(screenContainer, this.scenes);
     this.controller = new Controller(controllerContainer);
+    window["app"] = this;
     this.screen.nextScene();
     this.render();
   }
   next() {
-    if(this.screen.haveNextFrame){
+    if(this.screen.hasNextFrame()){
       this.screen.nextFrame();
     }
-    else if(this.screen.haveNextScene){
+    else if(this.screen.hasNextScene()){
       this.screen.nextScene();
+      this.screen.nextFrame();
     }
+    this.render();
   }
   render() {
     this.screen.render();

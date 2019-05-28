@@ -8,14 +8,14 @@ class Screen extends Component{
         this.scenes = scenes;
         this.current = -1;
     }
-    haveNextScene() {
-        return this.current < this.scenes.length;
+    hasNextScene() {
+        return this.current < this.scenes.length - 1;
     }
     nextScene() {
         this.current++;
     }
-    haveNextFrame() {
-        return this.scenes[this.current].haveNext();
+    hasNextFrame() {
+        return this.scenes[this.current].hasNext();
     }
     nextFrame() {
         this.scenes[this.current].next();

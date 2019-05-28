@@ -21,7 +21,7 @@ class ChatScene extends Scene {
   }
 
   hasNext() {
-    return this.current < this.count;
+    return this.current < this.count - 1;
   }
 
   next() {
