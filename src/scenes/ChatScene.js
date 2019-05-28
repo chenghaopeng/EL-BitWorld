@@ -16,12 +16,12 @@ class ChatScene extends Scene {
     this.personimgae = personimage;
     this.personname = personname;
 
-    count = words.length;
-    current = -1;
+    this.count = this.words.length;
+    this.current = -1;
   }
 
   hasNext() {
-    return current < count;
+    return this.current < this.count;
   }
 
   next() {
@@ -36,6 +36,7 @@ class ChatScene extends Scene {
       <div class="scene" style="background-image: url(${this.background})">
         <div class="person" style="background-imgae: url(${pi})"></div>
         <div class="chat">
+          <p class="chatname">${pn}</p>
           <p class="chatword">${word}</p>
         </div>
       </div>

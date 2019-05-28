@@ -1,31 +1,28 @@
 import Component from "../libs/Component.js"
 
-import Scene from "../libs/Scene.js";
-import WordScene from "../scenes/WordScene.js";
-import ChatScene from "../scenes/ChatScene.js";
-
 class Screen extends Component{
     scenes = [];
     current = -1;
     constructor(container, scenes) {
         super(container);
         this.scenes = scenes;
-        current = -1;
+        this.current = -1;
     }
     haveNextScene() {
-        return current < scenes.length;
+        return this.current < this.scenes.length;
     }
     nextScene() {
-        current++;
+        this.current++;
     }
     haveNextFrame() {
-        return scenes[current].haveNext();
+        return this.scenes[this.current].haveNext();
     }
     nextFrame() {
-        scenes[current].next();
+        this.scenes[this.current].next();
     }
     render() {
-        return scenes[current].render();
+        this.container.innerHTML = this.scenes[this.current].render();
+        return ``;
     }
 }
 

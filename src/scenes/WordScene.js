@@ -6,10 +6,6 @@ class WordScene extends Scene {
     super("#000000");
     this.words = words;
   }
-  constructor(words, background) {
-    super(background);
-    this.words = words;
-  }
   render() {
     return `
       <div class="scene" style="background-color: ${this.background}">

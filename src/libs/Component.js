@@ -8,4 +8,4 @@ class Component {
   }
 }
 
-export default Comment;
+export default Component;
