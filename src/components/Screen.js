@@ -29,6 +29,9 @@ class Screen extends Component{
         this.current--;
         this.scenes[this.current].current = -1;
     }
+    isEnded() {
+        return ! (this.hasNextScene() || this.hasNextFrame());
+    }
     render() {
         this.container.innerHTML = this.scenes[this.current].render();
         this.couldNext = this.container.innerHTML.indexOf("问：") === -1;
