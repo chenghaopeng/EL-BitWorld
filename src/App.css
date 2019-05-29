@@ -25,14 +25,14 @@ p {
 }
 
 .wordscene {
-  font-size: 8vh;
+  font-size: 7vh;
   text-align: center;
   display: table;
 }
 
 .wordscene > p.word {
   word-wrap: break-word;
-  padding: 0 20%;
+  padding: 0 15%;
   display: table-cell;
   vertical-align: middle;
 }
@@ -47,6 +47,15 @@ p {
   bottom: 5%;
   text-align: center;
   display: table;
+  transition: .1s;
+}
+
+#controller:hover {
+  background-color: rgba(0, 0, 255, .5);
+}
+
+#controller:active {
+  background-color: rgba(0, 0, 255, .6);
 }
 
 #controller > p.nextframe {
@@ -78,8 +87,11 @@ p {
 
 .chatscene > .person {
   bottom: 45%;
-  left: 10%;
-  width: 30%;
+  left: 5%;
+  width: auto;
+  max-width: 40%;
+  height: auto;
+  max-height: 40%;
   position: fixed;
 }
 
