@@ -14,7 +14,7 @@ class Screen extends Component{
     }
     nextScene() {
         this.current++;
-        this.scenes[this.current].current = 0;
+        this.scenes[this.current].current = -1;
     }
     hasNextFrame() {
         return this.scenes[this.current].hasNext();
@@ -27,7 +27,7 @@ class Screen extends Component{
     }
     backPrevScene() {
         this.current--;
-        this.scenes[this.current].current = 0;
+        this.scenes[this.current].current = -1;
     }
     render() {
         this.container.innerHTML = this.scenes[this.current].render();
