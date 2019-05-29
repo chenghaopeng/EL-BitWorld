@@ -66,6 +66,7 @@ p {
 }
 
 .chatscene > .chat > .chatname {
+  margin: 0;
   font-size: 2em;
   font-weight: bold;
 }
@@ -79,4 +80,9 @@ p {
   left: 10%;
   width: 30%;
   position: fixed;
+}
+
+.chatscene .question {
+  cursor: pointer;
+  font-weight: bold;
 }

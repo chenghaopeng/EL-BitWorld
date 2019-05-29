@@ -1,8 +1,8 @@
 import Component from "../libs/Component.js"
 
 class Controller extends Component {
-  render() {
-    this.container.innerHTML = `<p class="nextframe" onclick="app.next();">NEXT</p>`;
+  render(next) {
+    this.container.innerHTML = next?`<p class="nextframe" onclick="app.next();">继续</p>`:``;
     return ``;
   }
 }

@@ -3,6 +3,7 @@ import Component from "../libs/Component.js"
 class Screen extends Component{
     scenes = [];
     current = -1;
+    couldNext = true;
     constructor(container, scenes) {
         super(container);
         this.scenes = scenes;
@@ -13,6 +14,7 @@ class Screen extends Component{
     }
     nextScene() {
         this.current++;
+        this.scenes[this.current].current = 0;
     }
     hasNextFrame() {
         return this.scenes[this.current].hasNext();
@@ -20,8 +22,16 @@ class Screen extends Component{
     nextFrame() {
         this.scenes[this.current].next();
     }
+    backSceneStart() {
+        this.scenes[this.current].current = 0;
+    }
+    backPrevScene() {
+        this.current--;
+        this.scenes[this.current].current = 0;
+    }
     render() {
         this.container.innerHTML = this.scenes[this.current].render();
+        this.couldNext = this.container.innerHTML.indexOf("问：") === -1;
         return ``;
     }
 }
